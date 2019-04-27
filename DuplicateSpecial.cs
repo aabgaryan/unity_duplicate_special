@@ -70,8 +70,9 @@ public class DuplicateSpecial : EditorWindow
 										rend.bounds.size.y * relOffset.y + conOffset.y,
 										rend.bounds.size.z * relOffset.z + conOffset.z)
 										* i;
+			clone.name = target.name + "_" + i;
 			clone.transform.Translate(offset);
-			clone.transform.Rotate(clone.transform.rotation.eulerAngles + relRotOffset * i);
+			clone.transform.Rotate(relRotOffset * i);
 			clone.transform.SetParent(wrapper.transform);
 		}
 	}
